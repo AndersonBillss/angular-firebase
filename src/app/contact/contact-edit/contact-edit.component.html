@@ -1,0 +1,13 @@
+<h1 *ngIf="id === 'new'" >Add Contact</h1>
+<h1 *ngIf="id !== 'new'" >Contact Edit</h1>
+<mat-card *ngIf="contact$ | async as contact">
+  <mat-form-field>
+    <input *ngIf="id === 'new'"  placeholder="New Contact Name" type="text" matInput [(ngModel)]="contact.name">
+    <input *ngIf="id !== 'new'"  placeholder="Edit Contact Name" type="text" matInput [(ngModel)]="contact.name">
+  </mat-form-field>
+  <mat-card-actions align="start">
+    <button *ngIf="id === 'new'" mat-raised-button color="primary" (click)="saveContact(contact)">Save</button>
+    <button *ngIf="id !== 'new'" mat-raised-button (click)="editContact(contact)">Edit</button>
+    <button *ngIf="id !== 'new'" mat-raised-button (click)="deleteContact(id)">Delete</button>
+  </mat-card-actions>
+</mat-card>

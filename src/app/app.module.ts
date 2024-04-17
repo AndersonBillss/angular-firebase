@@ -8,7 +8,6 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { CompanyEditComponent } from './company/company-edit/company-edit.component'
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,14 +15,22 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from "@angular/material/input";
 import { environment} from "./environments/environment";
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+
+
+import { CompanyEditComponent } from './company/company-edit/company-edit.component'
 import { CompanyListComponent } from './company/company-list/company-list.component';
-import {MatIconModule} from '@angular/material/icon';
+
+import { ContactEditComponent } from './contact/contact-edit/contact-edit.component';
+import { ContactListComponent } from './contact/contact-list/contact-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyEditComponent,
-    CompanyListComponent
+    CompanyListComponent,
+    ContactEditComponent,
+    ContactListComponent,
   ],
   imports: [
     BrowserModule,

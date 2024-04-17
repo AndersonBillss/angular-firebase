@@ -24,6 +24,7 @@ export class CompanyService {
   getCompaniesObservable(): Observable<Company[]> {
     return this.companiesRef.snapshotChanges()
       .pipe(
+
         map((items: DocumentChangeAction<Company>[]): Company[] => {
           return items.map((item: DocumentChangeAction<Company>): Company => {
             return {
@@ -33,6 +34,7 @@ export class CompanyService {
             };
           });
         })
+        
       );
   }
 

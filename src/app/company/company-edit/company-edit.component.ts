@@ -49,14 +49,14 @@ export class CompanyEditComponent implements OnInit {
     this.companiesRef.add({
       name: company.name,
     })
-      .then(_ => this.router.navigate(['/companies']))
+      .then(_ => this.router.navigate(['/company/all']))
       .catch(error => console.log('add', error));
   }
 
   editCompany(company: any) {
     if(this.id){
       this.companiesRef.doc(this.id).update(company)
-        .then(_ => this.router.navigate(['/companies']))
+        .then(_ => this.router.navigate(['/company/all']))
         .catch(error => console.log('update', error));
     } else {
       console.log('no id')
@@ -66,7 +66,7 @@ export class CompanyEditComponent implements OnInit {
   deleteCompany(id: string | null) {
     if(id !== null){
       this.companiesRef.doc(id).delete()
-      .then(_ => this.router.navigate(['/companies']))
+      .then(_ => this.router.navigate(['/company/all']))
       .catch(error => console.log('delete', error));
     }
   }
